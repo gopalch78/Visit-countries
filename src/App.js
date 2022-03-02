@@ -118,15 +118,17 @@ class VisitCountriesApp extends Component {
         <h1 className="heading">Visited Countries</h1>
         <div>
           <ul className="visited-countries-list">
-            {visitedCountriesList.length === 0
-              ? 'No Countries Visited Yet'
-              : visitedCountriesList.map(eachCountry => (
-                  <VisitedCountryItem
-                    key={eachCountry.id}
-                    countryDetails={eachCountry}
-                    toggleIsVisited={this.toggleIsVisited}
-                  />
-                ))}
+            {visitedCountriesList.length === 0 ? (
+              <p>No Countries Visited Yet</p>
+            ) : (
+              visitedCountriesList.map(eachCountry => (
+                <VisitedCountryItem
+                  key={eachCountry.id}
+                  countryDetails={eachCountry}
+                  toggleIsVisited={this.toggleIsVisited}
+                />
+              ))
+            )}
           </ul>
         </div>
       </div>
